@@ -135,12 +135,12 @@ def mute(is_muted):
         pygame.mixer.music.set_volume(0.0)
         muted = False
         muteon_button = Button(controls_frame, image=img_mute_btn, borderwidth=0, command=lambda: mute(muted))
-        muteon_button.grid(row=2, column=3, padx=5)
+        muteon_button.grid(row=1, column=3, padx=5)
     else:
         pygame.mixer.music.set_volume(0.5)
         muted = True
         mute_button = Button(controls_frame, image=img_muteon_btn, borderwidth=0, command=lambda: mute(muted))
-        mute_button.grid(row=2, column=3, padx=5)
+        mute_button.grid(row=1, column=3, padx=5)
 
 
 # function to add 1 song to playlist. Change directory accordingly.
@@ -272,12 +272,12 @@ def pause(is_paused):
         pygame.mixer.music.unpause()
         paused = False
         pauseon_button = Button(controls_frame, image=img_pause_btn, borderwidth=0, command=lambda: pause(paused))
-        pauseon_button.grid(row=2, column=3, padx=5)
+        pauseon_button.grid(row=0, column=3, padx=5)
     else:
         pygame.mixer.music.pause()
         paused = True
         pause_button = Button(controls_frame, image=img_pauseon_btn, borderwidth=0, command=lambda: pause(paused))
-        pause_button.grid(row=2, column=3, padx=5)
+        pause_button.grid(row=0, column=3, padx=5)
 
 
 # function to stop the song
@@ -292,9 +292,10 @@ def stop():
 # function to fast forward the song
 def fastforward():
     # get current music
-    # currentmusic = song_playlist.curselection()
+    currentmusic = song_playlist.curselection()
+    print(currentmusic)
+    
     # get current position
-
     mymusic_curtime = pygame.mixer.music.get_pos() / 1000
 
     # mymusic_current = walkman.curselection()
@@ -387,7 +388,8 @@ pause_button.grid(row=0, column=3, padx=5)
 play_button.grid(row=0, column=4, padx=5)
 forward_button.grid(row=0, column=5, padx=5)
 skipforward_button.grid(row=0, column=6, padx=5)
-poweron_button.grid(row=1, column=0, padx=5)
+#poweron_button.grid(row=1, column=0, padx=5)
+poweron_button.grid(row=0, column=0, padx=5)
 equalizer_button.grid(row=1, column=1, padx=5)
 volume_button.grid(row=1, column=2, padx=5)
 mute_button.grid(row=1, column=3, padx=5)
