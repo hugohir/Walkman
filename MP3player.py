@@ -294,7 +294,7 @@ def fastforward():
     # get current music
     currentmusic = song_playlist.curselection()
     print(currentmusic)
-    
+
     # get current position
     mymusic_curtime = pygame.mixer.music.get_pos() / 1000
 
